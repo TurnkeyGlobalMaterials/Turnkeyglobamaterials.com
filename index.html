@@ -3,10 +3,315 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Turnkey Global Materials â Product Catalog</title>
+<title>Turnkey Global Materials — Product Catalog</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-Thank you — your inquiry has been submitted. A member of the TGM team will be in touch within 1 business day.');}
+<style>
+:root{--green-deep:#1e3a2a;--green-dark:#243d2f;--green-mid:#2d5040;--gold:#c9a96e;--gold-light:#e0c48a;--cream:#f5f0e8;--cream-dark:#ede5d5;--charcoal:#2c2c2c;--white:#ffffff;--text-muted:#6b7c6e}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--charcoal);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden}
+.hero{background:var(--green-deep);min-height:100vh;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 80% 20%,rgba(201,169,110,.08) 0%,transparent 60%),radial-gradient(ellipse 40% 60% at 10% 80%,rgba(201,169,110,.05) 0%,transparent 50%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,169,110,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,169,110,.04) 1px,transparent 1px);background-size:60px 60px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:32px 60px;position:relative;z-index:10}
+.nav-logo{display:flex;align-items:center;gap:16px}
+.nav-wordmark .brand-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;letter-spacing:.2em;color:var(--white)}
+.nav-wordmark .brand-sub{font-family:'Barlow Condensed',sans-serif;font-weight:400;font-size:10px;letter-spacing:.3em;color:var(--gold)}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.2em;font-weight:500;color:rgba(255,255,255,.6);text-decoration:none;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.2em;font-weight:600;text-transform:uppercase;padding:10px 24px;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s}
+.nav-cta:hover{background:var(--gold);color:var(--green-deep)}
+.hero-content{flex:1;display:flex;flex-direction:column;justify-content:center;padding:60px 60px 80px;position:relative;z-index:10;max-width:800px}
+.hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:16px;animation:fadeUp .6s ease .1s both}
+.hero-eyebrow::before{content:'';display:block;width:40px;height:1px;background:var(--gold)}
+.hero-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,7vw,88px);font-weight:300;line-height:.95;color:var(--white);margin-bottom:32px;animation:fadeUp .6s ease .25s both}
+.hero-headline em{font-style:italic;color:var(--gold-light)}
+.hero-body{font-size:15px;line-height:1.7;color:rgba(255,255,255,.6);max-width:480px;margin-bottom:48px;font-weight:300;animation:fadeUp .6s ease .4s both}
+.hero-actions{display:flex;gap:16px;align-items:center;animation:fadeUp .6s ease .55s both}
+.btn-primary{background:var(--gold);color:var(--green-deep);font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.2em;font-weight:700;text-transform:uppercase;padding:14px 36px;border:none;text-decoration:none;display:inline-block;cursor:pointer;transition:all .2s}
+.btn-primary:hover{background:var(--gold-light)}
+.btn-ghost{background:transparent;border:none;color:rgba(255,255,255,.5);font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.2em;font-weight:500;text-transform:uppercase;padding:14px 0;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:color .2s}
+.btn-ghost:hover{color:var(--white)}
+.btn-ghost::after{content:'↓';font-size:14px}
+.hero-stats{position:absolute;right:60px;bottom:80px;display:flex;flex-direction:column;gap:32px;z-index:10;animation:fadeUp .6s ease .7s both}
+.stat{text-align:right}
+.stat-number{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--gold);line-height:1}
+.stat-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.25em;color:rgba(255,255,255,.4);text-transform:uppercase;margin-top:4px}
+.intro-band{background:var(--green-dark);padding:40px 60px;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.intro-item{display:flex;align-items:center;gap:16px;flex:1}
+.intro-item+.intro-item{padding-left:40px;border-left:1px solid rgba(201,169,110,.2)}
+.intro-icon{color:var(--gold);font-size:20px;flex-shrink:0}
+.intro-text strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.1em;color:var(--white);text-transform:uppercase;font-weight:600}
+.intro-text span{font-size:12px;color:rgba(255,255,255,.45);font-weight:300}
+section{padding:100px 60px}
+.section-header{margin-bottom:64px}
+.section-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.section-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--gold)}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,52px);font-weight:300;line-height:1.1}
+.section-title.light{color:var(--white)}
+#catalog{background:var(--cream)}
+.catalog-nav{display:flex;gap:4px;margin-bottom:56px;border-bottom:1px solid rgba(0,0,0,.08)}
+.cat-tab{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.15em;font-weight:600;text-transform:uppercase;padding:12px 20px;border:none;background:transparent;color:var(--text-muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .2s}
+.cat-tab:hover{color:var(--green-deep)}
+.cat-tab.active{color:var(--green-deep);border-bottom-color:var(--gold)}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2px}
+.product-card{background:var(--white);padding:36px;cursor:pointer;transition:all .25s;border:1px solid transparent}
+.product-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 12px 40px rgba(30,58,42,.12)}
+.card-category{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;font-weight:500}
+.card-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--green-deep);margin-bottom:12px;line-height:1.2}
+.card-desc{font-size:13px;line-height:1.65;color:var(--text-muted);font-weight:300;margin-bottom:24px}
+.card-specs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.spec-tag{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.1em;color:var(--green-mid);background:rgba(45,80,64,.08);padding:4px 10px;text-transform:uppercase;font-weight:500}
+.card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:20px;border-top:1px solid rgba(0,0,0,.06)}
+.card-lead{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.1em;color:var(--text-muted);text-transform:uppercase}
+.card-lead strong{display:block;color:var(--charcoal);font-size:13px;font-weight:600}
+.card-action{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.15em;font-weight:600;color:var(--gold);text-transform:uppercase;background:none;border:none;cursor:pointer;transition:color .2s;text-decoration:none;display:flex;align-items:center;gap:6px}
+.card-action:hover{color:var(--green-deep)}
+#process{background:var(--green-deep);position:relative;overflow:hidden}
+#process::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(201,169,110,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,169,110,.03) 1px,transparent 1px);background-size:60px 60px}
+.process-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;position:relative;z-index:1}
+.process-left .section-body{font-size:15px;line-height:1.8;color:rgba(255,255,255,.55);font-weight:300;margin-top:32px;max-width:420px}
+.process-step{display:flex;gap:28px;padding:32px 0;border-bottom:1px solid rgba(201,169,110,.1);opacity:.7;transition:opacity .2s}
+.process-step:first-child{padding-top:0}
+.process-step:last-child{border-bottom:none}
+.process-step:hover{opacity:1}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--gold);line-height:1;opacity:.4;flex-shrink:0;width:48px}
+.step-title{font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:.15em;font-weight:600;color:var(--white);text-transform:uppercase;margin-bottom:8px}
+.step-desc{font-size:13px;line-height:1.65;color:rgba(255,255,255,.45);font-weight:300}
+#specs{background:var(--cream-dark)}
+.specs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2px}
+.spec-card{background:var(--white);padding:32px;display:flex;flex-direction:column;gap:16px;transition:all .2s;border:1px solid transparent}
+.spec-card:hover{border-color:var(--gold);box-shadow:0 8px 32px rgba(30,58,42,.1)}
+.spec-icon{font-size:24px;color:var(--gold)}
+.spec-card-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--green-deep)}
+.spec-card-meta{font-size:12px;color:var(--text-muted);font-weight:300}
+.spec-download{margin-top:auto;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.15em;font-weight:600;color:var(--gold);text-transform:uppercase;background:none;border:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:0;transition:color .2s}
+.spec-download:hover{color:var(--green-deep)}
+#quote{background:var(--green-deep);position:relative;overflow:hidden}
+#quote::after{content:'TGM';position:absolute;right:-20px;bottom:-60px;font-family:'Cormorant Garamond',serif;font-size:320px;font-weight:300;color:rgba(255,255,255,.02);line-height:1;pointer-events:none;user-select:none}
+.quote-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;position:relative;z-index:1}
+.quote-left .section-body{font-size:15px;line-height:1.8;color:rgba(255,255,255,.55);font-weight:300;margin-top:24px;margin-bottom:40px}
+.quote-contact{display:flex;flex-direction:column;gap:20px}
+.contact-item{display:flex;align-items:flex-start;gap:16px}
+.contact-icon{color:var(--gold);font-size:16px;margin-top:2px;flex-shrink:0}
+.contact-item div strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;color:rgba(255,255,255,.4);text-transform:uppercase;margin-bottom:4px;font-weight:500}
+.contact-item div span{font-size:14px;color:var(--white);font-weight:300}
+.quote-form{display:flex;flex-direction:column;gap:16px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:8px}
+.form-group label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;color:rgba(255,255,255,.4);text-transform:uppercase;font-weight:500}
+.form-group input,.form-group select,.form-group textarea{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:300;padding:12px 16px;outline:none;transition:border-color .2s;width:100%}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,.25)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold)}
+.form-group select{appearance:none;cursor:pointer}
+.form-group select option{background:var(--green-deep)}
+.form-group textarea{resize:none;height:100px;line-height:1.6}
+.form-submit{background:var(--gold);color:var(--green-deep);font-family:'Barlow Condensed',sans-serif;font-size:13px;letter-spacing:.2em;font-weight:700;text-transform:uppercase;padding:16px 40px;border:none;cursor:pointer;transition:all .2s;align-self:flex-start;margin-top:8px}
+.form-submit:hover{background:var(--gold-light)}
+footer{background:#141f19;padding:48px 60px;display:flex;align-items:center;justify-content:space-between}
+.footer-brand{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.5)}
+.footer-brand span{display:block;font-size:9px;letter-spacing:.3em;color:var(--gold);margin-top:2px;font-weight:400}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.2);font-weight:300}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(20,31,25,.85);z-index:1000;align-items:center;justify-content:center;padding:40px;backdrop-filter:blur(4px)}
+.modal-overlay.open{display:flex}
+.modal{background:var(--cream);max-width:640px;width:100%;max-height:80vh;overflow-y:auto;position:relative}
+.modal-header{background:var(--green-deep);padding:32px 40px;position:sticky;top:0;z-index:1}
+.modal-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--white)}
+.modal-close{position:absolute;top:24px;right:32px;background:none;border:none;color:rgba(255,255,255,.4);font-size:24px;cursor:pointer;line-height:1;transition:color .2s}
+.modal-close:hover{color:var(--white)}
+.modal-body{padding:40px}
+.modal-section-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.25em;font-weight:600;color:var(--gold);text-transform:uppercase;margin-bottom:16px;margin-top:32px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,.08)}
+.modal-section-title:first-child{margin-top:0}
+.modal-spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.modal-spec-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.2em;color:var(--text-muted);text-transform:uppercase;font-weight:500;margin-bottom:4px}
+.modal-spec-value{font-size:14px;color:var(--charcoal);font-weight:400}
+.modal-desc{font-size:14px;line-height:1.7;color:var(--text-muted);font-weight:300}
+.modal-actions{display:flex;gap:12px;margin-top:36px;padding-top:24px;border-top:1px solid rgba(0,0,0,.08)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){nav,section,.intro-band,footer{padding-left:24px;padding-right:24px}.hero-content{padding:40px 24px 60px}.hero-stats{right:24px;bottom:60px}.process-grid,.quote-inner{grid-template-columns:1fr;gap:48px}.form-row{grid-template-columns:1fr}.intro-band{flex-direction:column}.intro-item+.intro-item{border-left:none;border-top:1px solid rgba(201,169,110,.2);padding-left:0;padding-top:24px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-grid"></div>
+  <nav>
+    <div class="nav-logo">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Outer thin cream border -->
+        <polygon points="9,4 39,4 45,24 39,44 9,44 3,24" fill="#2E5339" stroke="#F5F0E8" stroke-width="0.8"/>
+        <!-- Inner brass border (thickened for forest green bg) -->
+        <polygon points="11,7 37,7 43,24 37,41 11,41 5,24" fill="none" stroke="#C8A96E" stroke-width="1.5"/>
+        <!-- TGM text - Rajdhani Bold -->
+        <text x="24" y="28" text-anchor="middle" fill="#F5F0E8" font-family="Rajdhani, Barlow Condensed, sans-serif" font-size="10" font-weight="700" letter-spacing="1.2">TGM</text>
+      </svg>
+      <div class="nav-wordmark">
+        <div class="brand-name">TURNKEY</div>
+        <div class="brand-sub">Global Materials</div>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#catalog">Catalog</a></li>
+      <li><a href="#process">How We Work</a></li>
+      <li><a href="#specs">Spec Sheets</a></li>
+      <li><a href="#quote">Contact</a></li>
+    </ul>
+    <a href="#quote" class="nav-cta">Request Quote</a>
+  </nav>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Direct-Source Building Materials</div>
+    <h1 class="hero-headline">Premium <em>finishes,</em><br>direct from<br>manufacturer.</h1>
+    <p class="hero-body">Turnkey Global Materials sources cabinets, countertops, millwork, lighting, and furniture directly from vetted overseas manufacturers — delivering comparable or better quality at significantly lower cost for multifamily and commercial developers.</p>
+    <div class="hero-actions">
+      <a href="#catalog" class="btn-primary">Browse Catalog</a>
+      <a href="#quote" class="btn-ghost">Request a Quote</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-number">30–50%</div><div class="stat-label">Cost Savings vs. Domestic</div></div>
+    <div class="stat"><div class="stat-number">90 day</div><div class="stat-label">Avg. Lead Time</div></div>
+    <div class="stat"><div class="stat-number">6+</div><div class="stat-label">Product Categories</div></div>
+  </div>
+</header>
+
+<div class="intro-band">
+  <div class="intro-item"><div class="intro-icon">◈</div><div class="intro-text"><strong>No Minimum Order Quantity</strong><span>Spec one unit or a full building</span></div></div>
+  <div class="intro-item"><div class="intro-icon">◈</div><div class="intro-text"><strong>Direct Manufacturer Relationships</strong><span>No middlemen. Consistent quality at source.</span></div></div>
+  <div class="intro-item"><div class="intro-icon">◈</div><div class="intro-text"><strong>B2B Spec & Coordinate</strong><span>We manage logistics, customs, and delivery</span></div></div>
+  <div class="intro-item"><div class="intro-icon">◈</div><div class="intro-text"><strong>Austin, TX Based</strong><span>Local team, global supply chain</span></div></div>
+</div>
+
+<section id="catalog">
+  <div class="section-header">
+    <div class="section-eyebrow">Product Catalog</div>
+    <h2 class="section-title">Materials for every<br>finish specification</h2>
+  </div>
+  <div class="catalog-nav">
+    <button class="cat-tab active" onclick="showCategory('all',this)">All Categories</button>
+    <button class="cat-tab" onclick="showCategory('cabinets',this)">Cabinetry</button>
+    <button class="cat-tab" onclick="showCategory('countertops',this)">Countertops</button>
+    <button class="cat-tab" onclick="showCategory('millwork',this)">Millwork & Doors</button>
+    <button class="cat-tab" onclick="showCategory('lighting',this)">Lighting</button>
+    <button class="cat-tab" onclick="showCategory('furniture',this)">Furniture</button>
+    <button class="cat-tab" onclick="showCategory('closet',this)">Closet Builds</button>
+  </div>
+  <div id="product-grid" class="product-grid"></div>
+</section>
+
+<section id="process">
+  <div class="process-grid">
+    <div class="process-left">
+      <div class="section-eyebrow">How We Work</div>
+      <h2 class="section-title light">From spec to<br>delivery — handled.</h2>
+      <p class="section-body">We work directly with multifamily developers, senior living operators, and commercial builders to spec materials early and coordinate delivery on your construction schedule. No inventory required on your end.</p>
+    </div>
+    <div>
+      <div class="process-step"><div class="step-num">01</div><div><div class="step-title">Initial Consultation</div><div class="step-desc">Share your project scope, unit count, and finish spec targets. We'll identify which categories make the most sense and provide preliminary pricing.</div></div></div>
+      <div class="process-step"><div class="step-num">02</div><div><div class="step-title">Sample & Spec Review</div><div class="step-desc">Receive physical samples and detailed spec sheets. We'll coordinate any customization — finish colors, hardware, dimensions — before order placement.</div></div></div>
+      <div class="process-step"><div class="step-num">03</div><div><div class="step-title">Order & Production</div><div class="step-desc">Once approved, we place your order directly with the manufacturer. Production and QC typically takes 60–75 days from confirmed PO.</div></div></div>
+      <div class="process-step"><div class="step-num">04</div><div><div class="step-title">Logistics & Delivery</div><div class="step-desc">We coordinate customs clearance, freight, and final delivery to your project site or staging warehouse. Typically 90 days door to door.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="specs">
+  <div class="section-header">
+    <div class="section-eyebrow">Resources</div>
+    <h2 class="section-title">Download Spec Sheets</h2>
+  </div>
+  <div class="specs-grid">
+    <div class="spec-card"><div class="spec-icon">⬡</div><div class="spec-card-title">Cabinetry Catalog</div><div class="spec-card-meta">RTA & assembled · Shaker, flat-panel, raised panel · Full finish range</div><button class="spec-download" onclick="requestSpec('Cabinetry Catalog')">↓ Request Spec Sheet</button></div>
+    <div class="spec-card"><div class="spec-icon">⬡</div><div class="spec-card-title">Countertop Materials</div><div class="spec-card-meta">Quartz, porcelain, natural stone · Edge profiles · Thickness options</div><button class="spec-download" onclick="requestSpec('Countertop Materials')">↓ Request Spec Sheet</button></div>
+    <div class="spec-card"><div class="spec-icon">⬡</div><div class="spec-card-title">Doors & Windows</div><div class="spec-card-meta">Interior & exterior doors, windows · Standard & custom sizing</div><button class="spec-download" onclick="requestSpec('Doors & Windows')">↓ Request Spec Sheet</button></div>
+    <div class="spec-card"><div class="spec-icon">⬡</div><div class="spec-card-title">Millwork & Trim</div><div class="spec-card-meta">Crown moulding, baseboards, casing, wainscoting · Painted & stained</div><button class="spec-download" onclick="requestSpec('Millwork & Trim')">↓ Request Spec Sheet</button></div>
+    <div class="spec-card"><div class="spec-icon">⬡</div><div class="spec-card-title">Lighting Fixtures</div><div class="spec-card-meta">Pendants, vanity, flush mount, sconces · Residential & commercial</div><button class="spec-download" onclick="requestSpec('Lighting Fixtures')">↓ Request Spec Sheet</button></div>
+    <div class="spec-card"><div class="spec-icon">⬡</div><div class="spec-card-title">Closet Build Systems</div><div class="spec-card-meta">Modular & custom · Laminate & solid finishes · Walk-in & reach-in</div><button class="spec-download" onclick="requestSpec('Closet Build Systems')">↓ Request Spec Sheet</button></div>
+  </div>
+</section>
+
+<section id="quote">
+  <div class="quote-inner">
+    <div class="quote-left">
+      <div class="section-eyebrow">Get in Touch</div>
+      <h2 class="section-title light">Let's talk<br>about your project.</h2>
+      <p class="section-body">We work best when we're brought in early — before finish specs are locked. Give us your project type, unit count, and target spec level and we'll come back with pricing and lead time estimates.</p>
+      <div class="quote-contact">
+        <div class="contact-item"><div class="contact-icon">◉</div><div><strong>Location</strong><span>Austin, Texas</span></div></div>
+        <div class="contact-item"><div class="contact-icon">◉</div><div><strong>Email</strong><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="026a676e6e6d427677706c69677b656e6d60636e6f637667706b636e712c616d6f">[email&#160;protected]</a></span></div></div>
+        <div class="contact-item"><div class="contact-icon">◉</div><div><strong>Response Time</strong><span>Within 1 business day</span></div></div>
+      </div>
+    </div>
+    <div>
+      <form class="quote-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="John"></div>
+          <div class="form-group"><label>Last Name</label><input type="email" placeholder="Smith"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Company</label><input type="text" placeholder="Developer LLC"></div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="john@company.com"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Project Type</label><select><option value="" disabled selected>Select type</option><option>Multifamily Residential</option><option>Senior / Assisted Living</option><option>Commercial Office</option><option>Hospitality</option><option>Mixed-Use</option><option>Other</option></select></div>
+          <div class="form-group"><label>Unit / Key Count</label><input type="text" placeholder="e.g. 200 units"></div>
+        </div>
+        <div class="form-group"><label>Categories of Interest</label><select><option value="" disabled selected>Select primary category</option><option>Cabinetry</option><option>Countertops</option><option>Doors & Millwork</option><option>Lighting</option><option>Furniture</option><option>Closet Builds</option><option>Multiple / Full Package</option></select></div>
+        <div class="form-group"><label>Project Notes</label><textarea placeholder="Tell us about your project timeline, spec level, or any specific requirements..."></textarea></div>
+        <button type="submit" class="form-submit">Submit Inquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="display:flex;align-items:center;gap:14px">
+    <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="9,4 39,4 45,24 39,44 9,44 3,24" fill="#2E5339" stroke="#F5F0E8" stroke-width="0.8"/><polygon points="11,7 37,7 43,24 37,41 11,41 5,24" fill="none" stroke="#C8A96E" stroke-width="1.5"/><text x="24" y="28" text-anchor="middle" fill="#F5F0E8" font-family="Rajdhani, Barlow Condensed, sans-serif" font-size="10" font-weight="700" letter-spacing="1.2">TGM</text></svg>
+    <div class="footer-brand">TURNKEY<span>GLOBAL MATERIALS</span></div>
+  </div>
+  <div class="footer-copy">© 2025 Turnkey Global Materials LLC · Austin, Texas</div>
+</footer>
+
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-eyebrow" id="modal-eyebrow"></div>
+      <h3 class="modal-title" id="modal-title"></h3>
+      <button class="modal-close" onclick="closeModalDirect()">×</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const products=[{id:1,category:'cabinets',tag:'Cabinetry',name:'Shaker Series — RTA Cabinets',desc:'Ready-to-assemble shaker-style cabinets in painted and stained finishes. Available in full kitchen, bath, and laundry configurations. Dovetail drawer boxes, soft-close hinges standard.',specs:['Solid wood face frames','Plywood box construction','Soft-close standard','30+ finish options'],lead:'75–90 days',detail:{description:'Our most popular cabinet line for multifamily applications. Shaker profile with painted or stained solid wood face frames, plywood box construction, and full soft-close hardware package.',specs:{Construction:'Plywood box, solid wood face frame','Door Style':'Shaker (5-piece)','Drawer Box':'Dovetail construction',Hardware:'Soft-close hinges & slides','Finish Options':'30+ painted & stained',Assembly:'RTA (Ready-to-Assemble)','Lead Time':'75–90 days','Min. Order':'No minimum'}}},{id:2,category:'cabinets',tag:'Cabinetry',name:'Flat-Panel Modern — Full-Access',desc:'European-style frameless construction with slab doors. Clean, minimal profile ideal for contemporary multifamily and commercial applications. Full overlay, flush finish.',specs:['Frameless construction','Full-access interior','Slab door profiles','Handle or integrated pull'],lead:'75–90 days',detail:{description:'European frameless cabinets with slab door profiles. Full-access construction maximizes interior storage. Available with discrete handle hardware or integrated pull design.',specs:{Construction:'Frameless (European)','Door Style':'Slab / Flat-panel',Interior:'Full-access',Hardware:'Concealed hinge, optional handle','Finish Options':'High-gloss, matte, wood veneer','Lead Time':'75–90 days','Min. Order':'No minimum'}}},{id:3,category:'countertops',tag:'Countertops',name:'Engineered Quartz Slabs',desc:'Consistent color and pattern for high-volume projects. Available in Calacatta, Carrara-style, solid, and concrete looks. 93% quartz composition, suitable for kitchen and bath.',specs:['93% quartz composition','2cm & 3cm thickness','Eased, beveled, ogee edges','Custom sizing available'],lead:'60–75 days',detail:{description:'Engineered quartz is the standard specification for multifamily development — consistent pattern, low maintenance, durable. Available in 20+ colorways.',specs:{Composition:'93% natural quartz',Thickness:'2cm or 3cm',Surface:'Polished (matte available)','Edge Profiles':'Eased, bevel, ogee, mitered',Sizes:'Standard 120" × 55" or custom','Lead Time':'60–75 days','Min. Order':'No minimum'}}},{id:4,category:'countertops',tag:'Countertops',name:'Porcelain Large-Format Slabs',desc:'Ultra-large format porcelain panels (up to 126" × 63") for countertops, waterfall islands, and feature walls. Extremely low porosity. Suitable for outdoor applications.',specs:['Up to 126" × 63" panels','6mm & 12mm thickness','Low porosity','Indoor & outdoor rated'],lead:'60–75 days',detail:{description:'Large-format porcelain panels for luxury multifamily applications. Virtually zero porosity — no sealing required. Available in marble, stone, and concrete looks.',specs:{Material:'Sintered stone / porcelain','Max Size':'126" × 63"',Thickness:'6mm, 12mm, 20mm',Porosity:'Class 1 (near-zero)',Applications:'Countertop, wall, outdoor','Lead Time':'60–75 days','Min. Order':'No minimum'}}},{id:5,category:'millwork',tag:'Millwork & Doors',name:'Interior Door Collection',desc:'Hollow-core and solid-core interior doors in slab and pre-hung configurations. Shaker, flush, panel, and barn door styles. Primed or finished to spec.',specs:['Hollow & solid core','Pre-hung or slab','Standard & custom sizes','Primed for paint'],lead:'75–90 days',detail:{description:'Interior doors for multifamily — primed and ready for paint, solid or hollow core depending on application. Shaker 2-panel is our most-specified style.',specs:{Core:'Hollow or solid',Config:'Slab or pre-hung',Styles:'Shaker, flush, panel, French','Standard Size':'80" × 32" (custom available)',Finish:'White primed or factory painted','Lead Time':'75–90 days'}}},{id:6,category:'millwork',tag:'Millwork & Trim',name:'Trim & Moulding Package',desc:'Crown moulding, baseboard, door casing, and window sill packages. MDF and solid wood options. Primed white standard; stain-grade available.',specs:['Crown, base, casing','MDF & solid wood','Primed white standard','Stain-grade available'],lead:'60–75 days',detail:{description:'Coordinate trim packages across an entire development for cost and consistency. MDF is standard for painted applications; solid poplar for stain.',specs:{Profiles:'Crown, base, casing, sill, cap',Material:'MDF (paint) or solid poplar (stain)',Finish:'White primed standard',Custom:'Profile matching available',Packaging:'Linear foot, bundled by unit count','Lead Time':'60–75 days'}}},{id:7,category:'lighting',tag:'Lighting',name:'Multifamily Pendant Collection',desc:'Dining and kitchen island pendants in matte black, brushed gold, and satin nickel. E26 base, dimmable. Coordinated across open-concept living and kitchen zones.',specs:['Matte black, gold, nickel','E26 dimmable base','UL listed','Multiple shade styles'],lead:'60–75 days',detail:{description:'Pendant lighting for kitchen islands and dining areas. Available in coordinated finish families to spec entire buildings on consistent hardware.',specs:{Finishes:'Matte black, brushed gold, satin nickel',Base:'E26 standard',Dimmable:'Yes (with compatible dimmer)',Listed:'UL listed',Cord:'Adjustable, 48–72"','Lead Time':'60–75 days','Min. Order':'No minimum'}}},{id:8,category:'lighting',tag:'Lighting',name:'Bath Vanity Bar Lighting',desc:'Linear vanity bars and round globe configurations for bath applications. ADA-compliant mounting heights available. Coordinates with pendant and flush mount collections.',specs:['Linear & globe styles','ADA mounting available','Damp-rated','Coordinated finish families'],lead:'60–75 days',detail:{description:'Vanity lighting for bath — specified to coordinate with pendant finish families. Damp-rated for bathroom code compliance.',specs:{Styles:'Linear bar, globe cluster',Rating:'Damp-rated (UL)',ADA:'Compliant mounting available',Finishes:'Matches pendant collection',Bulbs:'Included or specify LED','Lead Time':'60–75 days'}}},{id:9,category:'furniture',tag:'Furniture',name:'Common Area Lounge Package',desc:'Sectional sofas, club chairs, and accent tables designed for leasing offices and amenity common areas. Commercial-grade fabric and frame construction.',specs:['Commercial-grade fabric','Kiln-dried hardwood frame','Custom COM available','MOQ: 5 units'],lead:'90–105 days',detail:{description:'Furniture packages for leasing offices, clubrooms, and common area amenity spaces. Commercial-grade upholstery and kiln-dried hardwood frames rated for high-traffic environments.',specs:{Frame:'Kiln-dried hardwood',Upholstery:'Commercial-grade fabric',Custom:"COM (Customer's Own Material)",'Traffic Rating':'Heavy commercial','Lead Time':'90–105 days','Min. Order':'5 units per SKU'}}},{id:10,category:'furniture',tag:'Furniture',name:'Live-Edge & Solid Wood Tables',desc:'Live-edge dining and coffee tables in walnut, oak, and acacia. High-margin item for luxury residential and showroom. Each piece unique; catalog available by request.',specs:['Walnut, oak, acacia','Custom sizing','Steel & wood base options','Each piece unique'],lead:'90–120 days',detail:{description:'Live-edge slabs in walnut, oak, and acacia with steel or solid wood bases. Dining table, coffee table, and console configurations. High visual impact, strong margin.',specs:{'Wood Species':'Black walnut, white oak, acacia',Base:'Steel (hairpin, trestle) or wood',Sizing:'Standard or custom',Finish:'Natural oil or matte lacquer','Lead Time':'90–120 days','Min. Order':'1 unit'}}},{id:11,category:'closet',tag:'Closet Builds',name:'Modular Walk-In Closet System',desc:'Modular laminate closet organizer systems for walk-in and reach-in configurations. Adjustable shelving, hanging sections, and drawer inserts. White, grey, and wood-tone finishes.',specs:['Adjustable shelving','Drawer module options','White, grey, wood-tone','No custom fab required'],lead:'60–75 days',detail:{description:'Modular closet systems that install without custom fabrication — pre-sized for standard walk-in and reach-in configurations. Increasingly standard spec in Class A multifamily.',specs:{System:'Panel & rail based',Configuration:'Walk-in, reach-in, wardrobe',Adjustability:'Fully adjustable shelving',Finishes:'White, light grey, warm oak',Drawers:'Optional soft-close modules','Lead Time':'60–75 days','Min. Order':'No minimum'}}},{id:12,category:'closet',tag:'Closet Builds',name:'Custom Closet — Painted MDF',desc:'Custom-sized painted MDF closet builds with flush reveals, integrated lighting-ready raceway, and optional built-in bench with lift-top storage. Luxury spec.',specs:['Custom dimensions','Flush reveal design','LED raceway ready','Bench with storage'],lead:'90–105 days',detail:{description:'For luxury multifamily or custom residential projects. Painted MDF with flush reveals, premium joinery, and optional integrated LED lighting, shoe shelving, and built-in seating.',specs:{Material:'Painted MDF',Design:'Custom dimensions & layout',Reveals:'Flush (3/16" standard)',Lighting:'LED raceway ready',Extras:'Bench, pull-outs, shoe shelves','Lead Time':'90–105 days','Min. Order':'1 unit'}}}];
+
+function renderProducts(filter='all'){
+  const grid=document.getElementById('product-grid');
+  const items=filter==='all'?products:products.filter(p=>p.category===filter);
+  grid.innerHTML=items.map(p=>`<div class="product-card" onclick="openModal(${p.id})"><div class="card-category">${p.tag}</div><div class="card-title">${p.name}</div><div class="card-desc">${p.desc}</div><div class="card-specs">${p.specs.map(s=>`<span class="spec-tag">${s}</span>`).join('')}</div><div class="card-footer"><div class="card-lead"><strong>${p.lead}</strong>Lead Time</div><span class="card-action">View Details →</span></div></div>`).join('');
+}
+
+function showCategory(cat,btn){
+  document.querySelectorAll('.cat-tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  renderProducts(cat);
+}
+
+function openModal(id){
+  const p=products.find(x=>x.id===id);if(!p)return;
+  document.getElementById('modal-eyebrow').textContent=p.tag;
+  document.getElementById('modal-title').textContent=p.name;
+  const specsHtml=Object.entries(p.detail.specs).map(([k,v])=>`<div><div class="modal-spec-label">${k}</div><div class="modal-spec-value">${v}</div></div>`).join('');
+  document.getElementById('modal-body').innerHTML=`<div class="modal-section-title">Overview</div><p class="modal-desc">${p.detail.description}</p><div class="modal-section-title">Specifications</div><div class="modal-spec-grid">${specsHtml}</div><div class="modal-actions"><a href="#quote" class="btn-primary" style="font-size:12px;padding:12px 28px;" onclick="closeModalDirect()">Request Quote</a><button class="btn-ghost" style="color:var(--text-muted);padding:12px 0;" onclick="requestSpec('${p.name}')">↓ Request Spec Sheet</button></div>`;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeModal(e){if(e.target===document.getElementById('modal'))closeModalDirect();}
+function closeModalDirect(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
+function requestSpec(name){alert('Spec sheet request received for: '+name+'\n\nA member of the TGM team will follow up shortly.');}
+function handleSubmit(e){e.preventDefault();alert('Thank you — your inquiry has been submitted. A member of the TGM team will be in touch within 1 business day.');}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModalDirect();});
 renderProducts();
 </script>
