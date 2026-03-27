@@ -130,7 +130,73 @@ footer{background:#141f19;padding:48px 60px;display:flex;align-items:center;just
 .modal-desc{font-size:14px;line-height:1.7;color:var(--text-muted);font-weight:300}
 .modal-actions{display:flex;gap:12px;margin-top:36px;padding-top:24px;border-top:1px solid rgba(0,0,0,.08)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:900px){nav,section,.intro-band,footer{padding-left:24px;padding-right:24px}.hero-content{padding:40px 24px 60px}.hero-stats{right:24px;bottom:60px}.process-grid,.quote-inner{grid-template-columns:1fr;gap:48px}.form-row{grid-template-columns:1fr}.intro-band{flex-direction:column}.intro-item+.intro-item{border-left:none;border-top:1px solid rgba(201,169,110,.2);padding-left:0;padding-top:24px}}
+
+/* ── Tablet (max 900px) ── */
+@media(max-width:900px){
+  nav,section,.intro-band,footer{padding-left:24px;padding-right:24px}
+  .hero-content{padding:40px 24px 60px}
+  .hero-stats{right:24px;bottom:60px}
+  .process-grid,.quote-inner{grid-template-columns:1fr;gap:48px}
+  .form-row{grid-template-columns:1fr}
+  .intro-band{flex-direction:column}
+  .intro-item+.intro-item{border-left:none;border-top:1px solid rgba(201,169,110,.2);padding-left:0;padding-top:24px}
+}
+
+/* ── Mobile (max 600px) ── */
+@media(max-width:600px){
+  /* Nav: hide links and CTA, shrink logo */
+  .nav-links,.nav-cta{display:none}
+  nav{padding:20px 20px}
+  nav img{height:80px !important}
+
+  /* Hero */
+  .hero-content{padding:32px 20px 48px}
+  .hero-headline{font-size:clamp(38px,11vw,56px);line-height:1.0}
+  .hero-body{font-size:14px;margin-bottom:32px}
+  .hero-actions{flex-direction:column;align-items:flex-start;gap:12px}
+  .btn-primary{width:100%;text-align:center;padding:16px 24px}
+
+  /* Hide stats on mobile — too cramped */
+  .hero-stats{display:none}
+
+  /* Intro band */
+  .intro-band{padding:28px 20px;gap:24px}
+  .intro-text strong{font-size:12px}
+  .intro-text span{font-size:11px}
+
+  /* Sections */
+  section{padding:60px 20px}
+  .section-header{margin-bottom:36px}
+  .section-title{font-size:clamp(28px,8vw,40px)}
+
+  /* Product grid — full width cards */
+  .product-grid{grid-template-columns:1fr;gap:1px}
+  .product-card{padding:24px}
+  .catalog-nav{overflow-x:auto;white-space:nowrap;padding-bottom:4px}
+
+  /* Specs grid */
+  .specs-grid{grid-template-columns:1fr}
+
+  /* Process */
+  .process-grid{grid-template-columns:1fr;gap:36px}
+  .process-left .section-body{max-width:100%}
+
+  /* Quote / contact form */
+  .quote-inner{grid-template-columns:1fr;gap:36px}
+  .quote-left .section-body{margin-bottom:24px}
+  .quote-contact{gap:14px}
+
+  /* Footer */
+  footer{flex-direction:column;gap:16px;align-items:flex-start;padding:32px 20px}
+  footer img{height:60px !important}
+  .footer-copy{font-size:11px}
+
+  /* Modal */
+  .modal{max-height:90vh}
+  .modal-header{padding:24px}
+  .modal-body{padding:24px}
+  .modal-spec-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
