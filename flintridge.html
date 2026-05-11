@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flintridge Project — Turnkey Global Materials</title>
+  <title>Flintridge Residence — Turnkey Global Materials</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -498,15 +498,89 @@
     .reveal.d2 { transition-delay: .22s; }
     .reveal.d3 { transition-delay: .36s; }
     .reveal.d4 { transition-delay: .48s; }
+
+    /* ─── MOBILE ────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .hero-nav {
+        padding: 24px 24px;
+      }
+      .hero-nav img {
+        height: 80px;
+      }
+      .hero-nav-label {
+        display: none;
+      }
+      .hero-body {
+        padding: 0 24px 80px;
+      }
+      .hero-stats {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 24px;
+        padding: 0 24px 48px;
+        text-align: left;
+      }
+      .stat-num { font-size: 32px; }
+
+      .intro-band {
+        flex-direction: column;
+        padding: 24px;
+        gap: 0;
+      }
+      .intro-item {
+        padding: 16px 0;
+        border-left: none !important;
+      }
+      .intro-item + .intro-item {
+        border-top: 1px solid rgba(201,169,110,.15);
+      }
+
+      .cat-section {
+        flex-direction: column !important;
+        min-height: auto;
+      }
+      .cat-image {
+        flex: none;
+        width: 100%;
+        height: 60vw;
+        min-height: 240px;
+      }
+      .cat-image-multi {
+        height: 100%;
+      }
+      .cat-text {
+        padding: 40px 24px;
+      }
+      .cat-num {
+        font-size: 130px;
+        bottom: -20px;
+        right: -10px;
+      }
+      .cat-section.dark .cat-num {
+        left: -10px;
+        right: auto;
+      }
+      .cat-headline { font-size: 34px; }
+      .cat-body { max-width: 100%; }
+
+      .footer {
+        flex-direction: column;
+        gap: 28px;
+        padding: 40px 24px;
+        text-align: center;
+      }
+      .footer-logo img { height: 70px; }
+      .footer-right { text-align: center; }
+    }
   </style>
 </head>
-<body>
-<div style="background:#141f19;padding:12px 60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(201,169,110,.1);">
+<body><div style="background:#141f19;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(201,169,110,.1);">
   <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
     <span style="font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:.25em;color:rgba(255,255,255,.4);text-transform:uppercase;">← Back to</span>
     <span style="font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.2em;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;">Turnkey Global Materials</span>
   </a>
-  <a href="/#quote" style="font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.2em;font-weight:600;color:#C8A96E;text-transform:uppercase;text-decoration:none;border:1px solid rgba(201,169,110,.4);padding:7px 18px;transition:all .2s;">Request Quote</a>
+  <a href="/#quote" style="font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.2em;font-weight:600;color:#C8A96E;text-transform:uppercase;text-decoration:none;border:1px solid rgba(201,169,110,.4);padding:7px 18px;">Request Quote</a>
 </div>
 
   <!-- ══════════════════════════ HERO ══════════════════════════ -->
